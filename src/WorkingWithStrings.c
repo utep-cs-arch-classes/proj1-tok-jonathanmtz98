@@ -42,7 +42,21 @@ char *word_end(char *str){
 	}
 	return 0;//When there is no more to read, return 0
 }
-
+int count_words(char *str){
+	char *p=str;
+	int count=0;
+	int i=0;
+	while(*p!='\0'){
+		if(*p==' ' || *p== '\t' || *p=='\n'){	
+		count++;
+		i++;
+		}
+		else{
+		return 0;
+		}
+	}
+	return count;
+}
 //int main(){
 //	char c=getchar();
 //	int a=space_char(c);
@@ -55,5 +69,8 @@ char *word_end(char *str){
 
 //	char msg[4]="ARCH";
 //	printf("%p\n", *word_end(msg));
+// 	printf("%p\n", *word_start(msg));
 
+//	char msg[4]="ARCH IS MY FAV CLASS";
+//	printf("%i\n", count_words(msg));
 //}
