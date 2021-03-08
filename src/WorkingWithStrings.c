@@ -1,4 +1,5 @@
-	int space_char(char c){
+#include <stdio.h>	
+int space_char(char c){
 	if(c==' '|| c=='\t' || c=='\n'){
 		return 1;//1=true
 	}
