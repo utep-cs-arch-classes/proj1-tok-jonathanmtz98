@@ -98,36 +98,37 @@ void free_tokens(char **tokens){
   }
   free(tokens); // free the tokens
 }
-//int main(){
-//	char c=getchar();
-//	int a=space_char(c);
-//	int b=non_space_char(c);
-//	printf("Is this char a space?\t");//This is additional in order to print TRUE or FALSE instead of 1 or 0
-//	if(a==1){
-//		printf("True");
-//	}
-//	else{
-//		printf("False");
-//}
-//printf("\n Is this char a non space?\t");
-//	if(b==1){
-//		printf("True");
-//	}
-//	else{
-//		printf("False");
-//}
-//	char msg[]="ARCH IS LIFE\0";
-//	char msg2[]="Hello my name is \0";
-//	printf("\nWord Start Pointer: %p", word_start(msg));//Print the pointer of word_start
-//	printf("\nWord End Pointer: %p", word_end(msg));//Print the pointer of word_end
- //	printf("\nNumber of words: ");
-//	printf("%i",count_words(msg2));//Print the number of words	
-//char msg3[]="ARCH IS FUN";
-	//char *ptr;
-	//ptr=msg3;
-	//char *p=copy_str(ptr,2);
-	//while(*p!=0){
-	//	printf("%c\n",*p);
-	//	p++;
-	//}
-//}
+int main(){
+	char c=getchar();
+	int a=space_char(c);
+	int b=non_space_char(c);
+	printf("Is this char a space?\t");//This is additional in order to print TRUE or FALSE instead of 1 or 0
+	if(a==1){
+		printf("True");
+	}
+	else{
+		printf("False");
+}
+printf("\n Is this char a non space?\t");
+	if(b==1){
+		printf("True");
+	}
+	else{
+		printf("False");
+}
+	char msg[]="ARCH IS LIFE\0";
+	char msg2[]="Hello my name is \0";
+	printf("\nWord Start Pointer: %p", word_start(msg));//Print the pointer of word_start
+	printf("\nWord End Pointer: %p", word_end(msg));//Print the pointer of word_end
+	printf("\nNumber of words: ");
+	printf("%i",count_words(msg2));//Print the number of words	
+char msg3[]="ARCH IS FUN";
+	char *ptr;
+	ptr=msg3;
+	printf("\n");
+	char *p=copy_str(ptr,2);
+	while(*p!=0){//This is additional in order to print the chars in copy_str function
+		printf("%c\n",*p);
+		p++;
+	}
+}
