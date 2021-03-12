@@ -9,9 +9,9 @@ List* init_history() {
 }
 
 char *get_history(List *list, int id) {
-  Item *item = list->root; // Keep track of the while loop
-  while (item->next != '\0') { // Read until the end of the list
-    if (item->id == id) { //If there is the id wanted...
+  Item *item=list->root; // Keep track of the while loop
+  while (item->next!='\0') { // Read until the end of the list
+    if (item->id==id) { //If there is the id wanted...
       return item->str; // return it
     }
     item=item->next; // Go to the next item
@@ -20,8 +20,8 @@ char *get_history(List *list, int id) {
 }
 
 void print_history(List *list) {
-  Item *item = list->root; // temporary iterator to move through list
-  while(item->next != NULL) { // Read list
+  Item *item=list->root; // temporary iterator to move through list
+  while(item->next!='\0') { // Read list
     printf("%d, %s", item->id, item->str); // Print the history
     item = item->next; // Read next item
   }
@@ -29,10 +29,10 @@ void print_history(List *list) {
 }
 
 void free_history(List *list) {
-  Item *temp = list->root; //This will be used to keep track of the while loop
-  while(temp->next != NULL) { // Read until the end of the list
+  Item *temp=list->root; //This will be used to keep track of the while loop
+  while(temp->next!= '\0') { // Read until the end of the list
     free(temp); // Use "free" to free values
-    temp = temp->next; // Read next item
+    temp=temp->next; // Read next item
   }
   free(list); // free the list
   free(temp); // free last values
