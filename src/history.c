@@ -29,11 +29,11 @@ void print_history(List *list) {
 }
 
 void free_history(List *list) {
-  Item *temp=list->root; //This will be used to keep track of the while loop
-  while(temp->next!= '\0') { // Read until the end of the list
-    free(temp); // Use "free" to free values
-    temp=temp->next; // Read next item
+  Item *item=list->root; //This will be used to keep track of the while loop
+  while(item->next!'\0'){ // Read until the end of the list
+    free(item); // Use "free" to free values
+    item=item->next; // Read next item
   }
   free(list); // free the list
-  free(temp); // free last values
+  free(item); // free last values
 }
