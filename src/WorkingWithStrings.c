@@ -58,6 +58,34 @@ i++;//Keep going through the string
 p=wordend;//Last step is to declare char *p as wordend
 	}
 }
+char *copy_str(char *inStr, short len){
+char *p=(char*)malloc(len+1);//To do this method, I need to use malloc(Memory allocation)
+short x=0;//This is a counter that will help me to print a specific number of chars(iterator). I will define it as x.
+while(x!=len){//Read until x is equal to the length I want to read.
+	*(p+x)=*(inStr+x);//Update the string to the one I want to.
+	x++;//Variable x has to keep going until it reaches the length we want.
+}
+*(p+len)='\0';//Recently added to avoid random chars to be printed. 
+//First, when I asked to print a specific number of chars, they were printed, but after it, random emojis and chars were printed. This help to stop that since we are declaring it as null.
+return p;//Return the chars we asked for.
+}
+
+char **tokenize(char *str){
+int words=count_words(str);//To tokenize, I need to have the number of words the string has as reference in order to make the work easier
+int i=0;//We need an iterator.
+char *p=str;//This will take the place of str.
+char *wordstart, *wordend;//As done in milestone 2, I need word_start and word_end functions. They are important since it will give me the length of the string
+char **mem=(char**)malloc(sizeof(char*)*(words+1));//Malloc. It includes the count_words because I need the number of words the string has.
+while(i!=words){//Read until I reach the number of words
+	wordstart=word_start(p);//Here, like in milestone 2, I need to have word_start as reference.
+	wordend=word_end(wordstart);//The same with wordend. I will use those functions to know the length(no. of tokens) I will have.
+	*(mem+i)=copy_str(wordstart,wordend-wordstart);//Here I used copy_str because we need to print the tokens. It helps to separate them.
+	p=wordend;//Here pointer p is declared as wordend.
+	i++;
+}
+*(mem+words)='\0';//As done in the copy_str, I need to include this in order to avoid random chars to appear. It is known as terminating null character.
+return mem;//Finally, return the tokens, but we need print_tokens function to print them.
+}
 //int main(){
 //	char c=getchar();
 //	int a=space_char(c);
