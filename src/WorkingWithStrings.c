@@ -1,4 +1,7 @@
-#include <stdio.h>	
+#include <stdio.h>
+#include <stdlib.h>
+#include <tokenizer.h>
+
 int space_char(char c){
 	if(c==' '|| c=='\t' || c=='\n'){//If the first char is a space, a tab, or a jump of line...
 		return 1;//Return 1=true in boolean
