@@ -89,6 +89,15 @@ while(i!=words){//Read until I reach the number of words
 *(mem+words)='\0';//As done in the copy_str, I need to include this in order to avoid random chars to appear. It is known as terminating null character.
 return mem;//Finally, return the tokens, but we need print_tokens function to print them.
 }
+
+void free_tokens(char **tokens){
+  int i = 0; //Keep track of the tokens
+  while (tokens[i]) { //Read the tokens
+    free(tokens[i]); // Deallocate memory
+    i++; // Keep reading tokens
+  }
+  free(tokens); // free the tokens
+}
 //int main(){
 //	char c=getchar();
 //	int a=space_char(c);
@@ -112,5 +121,13 @@ return mem;//Finally, return the tokens, but we need print_tokens function to pr
 //	printf("\nWord Start Pointer: %p", word_start(msg));//Print the pointer of word_start
 //	printf("\nWord End Pointer: %p", word_end(msg));//Print the pointer of word_end
  //	printf("\nNumber of words: ");
- //	printf("%i",count_words(msg2));//Print the number of words	
+//	printf("%i",count_words(msg2));//Print the number of words	
+//char msg3[]="ARCH IS FUN";
+	//char *ptr;
+	//ptr=msg3;
+	//char *p=copy_str(ptr,2);
+	//while(*p!=0){
+	//	printf("%c\n",*p);
+	//	p++;
+	//}
 //}
